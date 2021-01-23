@@ -17,6 +17,8 @@ class MyApp extends StatelessWidget {
       supportedLocales: [
         Locale('en', 'US'),
         Locale('zh', 'CN'),
+        Locale('pt', 'PT'),
+        Locale('ru', 'RU'),
         Locale('ja', 'JP'),
       ],
       // These delegates make sure that the localization data for the proper language is loaded
@@ -32,8 +34,7 @@ class MyApp extends StatelessWidget {
       localeResolutionCallback: (locale, supportedLocales) {
         // Check if the current device locale is supported
         for (var supportedLocale in supportedLocales) {
-          if (supportedLocale.languageCode == locale.languageCode &&
-              supportedLocale.countryCode == locale.countryCode) {
+          if (supportedLocale.languageCode == locale.countryCode) {
             return supportedLocale;
           }
         }
